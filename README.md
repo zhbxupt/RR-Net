@@ -1,8 +1,3 @@
-# RR-Net
-Few-Shot Fine-Grained Image Classification with Residual Reconstruction Network Based on Feature Enhancement
-
-The code will be uploaded after the paper is accepted.
-
 # Franka Panda 机械臂 Xbox 控制系统
 
 本项目提供了两种控制模式，用户可以根据需求选择合适的方式来操作 Franka Panda 机械臂：  
@@ -40,26 +35,23 @@ sudo /usr/local/bin/xow
 ### 🚀 使用方法
 ### 方式一：Flask Web 服务模式
 
-启动 Flask 服务：
+- **启动 Flask 服务** 
 ```bash
 python web_server.py
 ```
 默认运行在：http://127.0.0.1:7902
-
-等待server启动之后，启动 Xbox 控制桥接：
+- **等待server启动之后，启动 Xbox 控制桥接**
 ```python
 python xbox2franka_web.py
 ```
 
 ### 方式二：本机直连模式
-
-确认系统识别 Xbox 手柄：
+- **确认系统识别 Xbox 手柄**
 ```bash
 ls /dev/input/js*
 jstest /dev/input/js0
 ```
-
-启动本地 Teleoperation：
+- **启动本地 Teleoperation**
 ```bash
 python Xbox_Teleoperation_Pizza.py
 ```
@@ -76,8 +68,7 @@ X	断开 Xbox 指令，重连机械臂
 Y	切断机械臂与 Xbox 控制
 ```
 如需修改控制速度参数，参考data_from_xbox.py，更改CONFIG参数信息。
-
-优点：
+- **优点**
 
 延迟低，实时性更好
 
@@ -85,8 +76,8 @@ Y	切断机械臂与 Xbox 控制
 
 ### ⚠️ 注意事项
 ```bash
-使用web模式的时候 SPEED_FACTOR 、SPEED_FACTOR_Z 、SPEED_ROTATION 需要调大至 0.05 ， 0.002
-使用直连模式的时候 SPEED_FACTOR 、SPEED_FACTOR_Z 、SPEED_ROTATION 需要调至 0.005 ， 0.0002
+使用web模式的时候 SPEED_FACTOR 、SPEED_FACTOR_Z 、SPEED_ROTATION 需要调大至 0.05, 0.002
+使用直连模式的时候 SPEED_FACTOR 、SPEED_FACTOR_Z 、SPEED_ROTATION 需要调至 0.005，0.0002
 如果切换模式的时候没有修改上述值，会导致机械臂过速或者过慢！
 
 确保机械臂周围无障碍物，避免碰撞
@@ -156,26 +147,25 @@ conda activate frantrol
 ```
 ### 🚀 Usage
 ### Mode 1: Flask Web Service
-
-Start the Flask server:
+- **Start the Flask server：**
 ```bash
 python web_server.py
 ```
 
 Default address: http://127.0.0.1:7902
 
-Once the server is running, start the Xbox control bridge:
+- **Once the server is running, start the Xbox control bridge:**
 ```bash
 python xbox2franka_web.py
 ```
 ### Mode 2: Direct Local Mode
 
-Confirm that the Xbox controller is recognized:
+- **Confirm that the Xbox controller is recognized:**
 ```bash
 ls /dev/input/js*
 jstest /dev/input/js0
 ```
-Launch local teleoperation:
+- **Launch local teleoperation:**
 ```bash
 python Xbox_Teleoperation_Pizza.py
 ```
